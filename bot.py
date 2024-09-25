@@ -12,6 +12,7 @@ import os
 openai.api_key = OPENAI_API_KEY
 openai.organization=OPENAI_ORG
 
+
 # Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -29,7 +30,7 @@ async def handle_message(update: Update, context):
     # Отправляем запрос к ChatGPT
     try:
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",  # или "gpt-4", если у вас доступ
+            model="gpt-3.5-turbo-0125",  # или "gpt-4", если у вас доступ
             messages=[
                 {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": user_message},
